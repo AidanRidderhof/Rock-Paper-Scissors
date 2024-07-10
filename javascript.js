@@ -1,4 +1,6 @@
 console.log("hello world")
+let humanScore=0;
+let computerScore=0;
 
 
 function getComputerChoice() {
@@ -16,4 +18,22 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice())
+function getHumanChoice(){
+    let choice = prompt("Rock, Paper, or Scissors?");
+    choice = choice.toUpperCase();
+    while (true) {
+        if (choice!=="ROCK" || choice!=="PAPER" || choice!=="SCISSORS") {
+            choice = prompt("Rock, Paper, or Scissors?");
+            choice = choice.toUpperCase();
+        }
+        else {
+        return choice;
+        }
+    }
+}
+
+function playRound() {
+
+}
+
+getHumanChoice();
