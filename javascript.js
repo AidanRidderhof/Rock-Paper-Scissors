@@ -22,12 +22,12 @@ function getHumanChoice(){
     let choice = prompt("Rock, Paper, or Scissors?");
     choice = choice.toUpperCase();
     while (true) {
-        if (choice!=="ROCK" || choice!=="PAPER" || choice!=="SCISSORS") {
-            choice = prompt("Rock, Paper, or Scissors?");
-            choice = choice.toUpperCase();
+        if (choice==="ROCK" || choice==="PAPER" || choice==="SCISSORS") {
+            return choice;
         }
         else {
-        return choice;
+            choice = prompt("Rock, Paper, or Scissors?");
+            choice = choice.toUpperCase();
         }
     }
 }
@@ -36,4 +36,4 @@ function playRound() {
 
 }
 
-getHumanChoice();
+console.log(getHumanChoice());
