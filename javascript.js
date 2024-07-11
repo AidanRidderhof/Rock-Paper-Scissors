@@ -40,6 +40,7 @@ function playGame () {
 
     let x;
 
+    /*looping playRound and incrementing the score counters*/
     while (true) {
 
         x = playRound(computerSelection, humanSelection);
