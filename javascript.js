@@ -1,5 +1,6 @@
+const btn = document.querySelector("#btn")
+btn.addEventListener('click', playRound )
 
-console.log(playGame());
 
 function getComputerChoice() {
     let x = Math.random();
