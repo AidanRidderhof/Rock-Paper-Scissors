@@ -45,11 +45,15 @@ function playRound(computerChoice, humanChoice) {
         }
         else if (computerChoice==="Paper") {
             console.log("Rock loses to paper");
+            cs++;
+            document.getElementById('cs').textContent = cs;
             return 2;
         }
 
         else if (computerChoice==="Scissors") {
             console.log("Rock beats scissors");
+            hs++;
+            document.getElementById('hs').textContent = hs;
             return 1
         }
     }
@@ -57,6 +61,8 @@ function playRound(computerChoice, humanChoice) {
     else if (humanChoice==="PAPER") {
         if (computerChoice==="Rock") {
             console.log("Paper beats rock");
+            hs++;
+            document.getElementById('hs').textContent = hs;
             return 1;
         }
         else if (computerChoice==="Paper") {
@@ -66,6 +72,8 @@ function playRound(computerChoice, humanChoice) {
 
         else if (computerChoice==="Scissors") {
             console.log("Paper loses to Scissors");
+            cs++;
+            document.getElementById('cs').textContent = cs;
             return 2;
         }
     }
@@ -74,10 +82,14 @@ function playRound(computerChoice, humanChoice) {
     if (humanChoice==="SCISSORS") {
         if (computerChoice==="Rock") {
             console.log("Scissors loses to rock");
+            cs++;
+            document.getElementById('cs').textContent = cs;
             return 2;
         }
         else if (computerChoice==="Paper") {
             console.log("Scissors beat paper");
+            hs++;
+            document.getElementById('hs').textContent = hs;
             return 1;
         }
 
