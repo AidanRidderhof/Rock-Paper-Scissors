@@ -1,3 +1,13 @@
+let buttons = document.querySelectorAll("button")
+let computerSelection = getComputerChoice()
+
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      computerSelection = getComputerChoice();
+      playRound(computerSelection, button.id);
+    });
+  });
+
 
 function getComputerChoice() {
     let x = Math.random();
@@ -14,7 +24,7 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice(){
+/*function getHumanChoice(){
     let choice = prompt("Rock, Paper, or Scissors?");
     choice = choice.toUpperCase();
     while (true) {
@@ -27,7 +37,7 @@ function getHumanChoice(){
         }
     }
 }
-
+*/
 /*playRound function*/
 function playRound(computerChoice, humanChoice) {
     /* 1-win, 2-lose, 3-tie*/
