@@ -1,6 +1,9 @@
-let buttons = document.querySelectorAll("button")
-let computerSelection = getComputerChoice()
+let buttons = document.querySelectorAll("button");
+let computerSelection = getComputerChoice();
 let result = document.querySelector("#result");
+let para = document.createElement("p");
+let hs = 0;
+let cs = 0;
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -25,28 +28,17 @@ function getComputerChoice() {
     }
 }
 
-/*function getHumanChoice(){
-    let choice = prompt("Rock, Paper, or Scissors?");
-    choice = choice.toUpperCase();
-    while (true) {
-        if (choice==="ROCK" || choice==="PAPER" || choice==="SCISSORS") {
-            return choice;
-        }
-        else {
-            choice = prompt("Rock, Paper, or Scissors?");
-            choice = choice.toUpperCase();
-        }
-    }
-}
-*/
 /*playRound function*/
 function playRound(computerChoice, humanChoice) {
     /*displays results*/
     para.textContent=humanChoice+" - "+computerChoice;
     result.appendChild(para);
+
     /* 1-win, 2-lose, 3-tie*/
     /*Rock Route*/
-    if (humanChoice==="Rock") {
+    humanChoice = humanChoice.toUpperCase();
+    
+    if (humanChoice==="ROCK") {
         if (computerChoice==="Rock") {
             console.log("Tie");
             return 3;
@@ -62,7 +54,7 @@ function playRound(computerChoice, humanChoice) {
         }
     }
     /*Paper Route*/
-    else if (humanChoice==="Paper") {
+    else if (humanChoice==="PAPER") {
         if (computerChoice==="Rock") {
             console.log("Paper beats rock");
             return 1;
@@ -79,7 +71,7 @@ function playRound(computerChoice, humanChoice) {
     }
 
     /*Scissors Route*/
-    if (humanChoice==="Scissors") {
+    if (humanChoice==="SCISSORS") {
         if (computerChoice==="Rock") {
             console.log("Scissors loses to rock");
             return 2;
