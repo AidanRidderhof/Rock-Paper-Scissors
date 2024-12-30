@@ -1,5 +1,6 @@
 let buttons = document.querySelectorAll("button")
 let computerSelection = getComputerChoice()
+let result = document.querySelector("#result");
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -40,9 +41,12 @@ function getComputerChoice() {
 */
 /*playRound function*/
 function playRound(computerChoice, humanChoice) {
+    /*displays results*/
+    para.textContent=humanChoice+" - "+computerChoice;
+    result.appendChild(para);
     /* 1-win, 2-lose, 3-tie*/
     /*Rock Route*/
-    if (humanChoice==="ROCK") {
+    if (humanChoice==="Rock") {
         if (computerChoice==="Rock") {
             console.log("Tie");
             return 3;
@@ -58,7 +62,7 @@ function playRound(computerChoice, humanChoice) {
         }
     }
     /*Paper Route*/
-    else if (humanChoice==="PAPER") {
+    else if (humanChoice==="Paper") {
         if (computerChoice==="Rock") {
             console.log("Paper beats rock");
             return 1;
@@ -75,7 +79,7 @@ function playRound(computerChoice, humanChoice) {
     }
 
     /*Scissors Route*/
-    if (humanChoice==="SCISSORS") {
+    if (humanChoice==="Scissors") {
         if (computerChoice==="Rock") {
             console.log("Scissors loses to rock");
             return 2;
