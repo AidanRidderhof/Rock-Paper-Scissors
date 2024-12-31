@@ -2,8 +2,11 @@ let buttons = document.querySelectorAll("button");
 let computerSelection = getComputerChoice();
 let result = document.querySelector("#result");
 let para = document.createElement("p");
+let Victory = document.createElement("p");
 let hs = 0;
 let cs = 0;
+let Win = document.createElement("p");
+let score = document.querySelector("#Score");
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -28,8 +31,21 @@ function getComputerChoice() {
     }
 }
 
+
+function checkWin(cs, hs) {
+    if (hs=5) {
+        Win.textContent="You won! Congratulations!"
+        Score.appendChild()
+    }
+
+    else if (cs=5){
+
+    }
+}
+
 /*playRound function*/
 function playRound(computerChoice, humanChoice) {
+
     /*displays results*/
     para.textContent=humanChoice+" - "+computerChoice;
     result.appendChild(para);
@@ -97,6 +113,17 @@ function playRound(computerChoice, humanChoice) {
             console.log("Tie");
             return 3;
         }
+    }
+
+    /*check score*/
+    if (hs==5) {
+        Victory.textContent="You wins!";
+        document.body.appendChild(Victory);
+    }
+
+    else if (cs==5) {
+        Victory.textContent="The computer wins!";
+        document.body.appendChild(Victory);
     }
 }
 
