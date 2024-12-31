@@ -6,7 +6,7 @@ let Victory = document.createElement("p");
 let hs = 0;
 let cs = 0;
 let Win = document.createElement("p");
-let score = document.querySelector("#Score");
+let score = document.querySelector("#score");
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -33,14 +33,16 @@ function getComputerChoice() {
 
 
 function checkWin(cs, hs) {
-    if (hs=5) {
-        Win.textContent="You won! Congratulations!"
-        Score.appendChild()
+    if (hs==5) {
+        Win.textContent="You won! Congratulations!";
+        score.appendChild(Win);
     }
 
-    else if (cs=5){
-
+    else if (cs==5){
+        Win.textContent="The computer won!";
+        score.appendChild(Win);
     }
+    return 1;
 }
 
 /*playRound function*/
@@ -63,6 +65,7 @@ function playRound(computerChoice, humanChoice) {
             console.log("Rock loses to paper");
             cs++;
             document.getElementById('cs').textContent = cs;
+            checkWin(cs, hs);
             return 2;
         }
 
@@ -70,6 +73,7 @@ function playRound(computerChoice, humanChoice) {
             console.log("Rock beats scissors");
             hs++;
             document.getElementById('hs').textContent = hs;
+            checkWin(cs, hs);
             return 1
         }
     }
@@ -79,6 +83,7 @@ function playRound(computerChoice, humanChoice) {
             console.log("Paper beats rock");
             hs++;
             document.getElementById('hs').textContent = hs;
+            checkWin(cs, hs);
             return 1;
         }
         else if (computerChoice==="Paper") {
@@ -90,6 +95,7 @@ function playRound(computerChoice, humanChoice) {
             console.log("Paper loses to Scissors");
             cs++;
             document.getElementById('cs').textContent = cs;
+            checkWin(cs, hs);
             return 2;
         }
     }
@@ -100,12 +106,14 @@ function playRound(computerChoice, humanChoice) {
             console.log("Scissors loses to rock");
             cs++;
             document.getElementById('cs').textContent = cs;
+            checkWin(cs, hs);
             return 2;
         }
         else if (computerChoice==="Paper") {
             console.log("Scissors beat paper");
             hs++;
             document.getElementById('hs').textContent = hs;
+            checkWin(cs, hs);
             return 1;
         }
 
